@@ -25,6 +25,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
+Plug 'tomlion/vim-solidity'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -54,9 +55,9 @@ let g:vimshell_prompt =  '$ '
 
 " terminal emulation
 if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
+  nnoremap <silent> <F5> :terminal<CR>
 else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
+  nnoremap <silent> <F5> :VimShellCreate<CR>
 endif
 "*****************************************************************************
 "" Autocmd Rules
@@ -426,3 +427,4 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+
