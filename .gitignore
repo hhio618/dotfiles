@@ -1,0 +1,33 @@
+# ~/.config/.gitignore
+#
+# This repo intentionally tracks ONLY the sway rice and its config dependencies.
+# Everything else in ~/.config is ignored.
+
+# Ignore everything at the top level by default.
+/*
+
+# Keep this ignore file itself.
+!.gitignore
+
+# --- Sway and its dependencies ---
+!/sway/
+!/swaylock/
+!/swaync/
+!/rofi/
+!/alacritty/
+!/wlogout/
+!/wallpaper/
+!/libinput-gestures.conf
+
+# --- Waybar: only the active config + stylesheet belong to the sway rice ---
+!/waybar/
+/waybar/*
+!/waybar/config
+!/waybar/style.css
+
+# --- systemd: only the sway idler unit ---
+!/systemd/
+/systemd/*
+!/systemd/user/
+/systemd/user/*
+!/systemd/user/swayidle.service

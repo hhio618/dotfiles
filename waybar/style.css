@@ -1,0 +1,88 @@
+/* Waybar styling — "blade": rectangular, brushed-steel accents, larger font */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "SpaceMono Nerd Font", monospace;
+  font-size: 15px;
+  min-height: 0;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: rgba(27, 29, 35, 0.94);
+  color: #c8d1d9;
+  border-bottom: 2px solid #9aa4b2;
+}
+
+tooltip {
+  background: #1b1d23;
+  border: 1px solid #9aa4b2;
+  border-radius: 0;
+}
+
+tooltip label {
+  color: #e6edf3;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #c8d1d9;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: #14161a;
+  background: linear-gradient(#c8d1d9, #9aa4b2);
+  border-bottom: 3px solid #e6edf3;
+}
+
+#workspaces button.urgent {
+  color: #ed8796;
+  border-bottom: 3px solid #ed8796;
+}
+
+#workspaces button:hover {
+  background: rgba(154, 164, 178, 0.25);
+}
+
+#custom-powermenu,
+#mode,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#clock,
+#tray {
+  padding: 0 8px;
+  margin: 3px 0;
+  border-radius: 0;
+  border-left: 2px solid rgba(154, 164, 178, 0.35);
+}
+
+#custom-powermenu {
+  color: #c8d1d9;
+}
+
+#window {
+  color: #e6edf3;
+}
+
+#clock {
+  color: #e6edf3;
+}
+
+#battery {
+  color: #a6da95;
+}
+
+#battery.warning {
+  color: #eed49f;
+}
+
+#battery.critical {
+  color: #ed8796;
+}

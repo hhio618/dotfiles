@@ -1,0 +1,195 @@
+configuration {
+  modi:                       "drun,filebrowser";
+  show-icons:                 true;
+  display-drun:               "Apps";
+  display-run:                "Run";
+  display-filebrowser:        "Files";
+  display-window:             "Windows";
+  drun-display-format:        "{name}\n[<span weight='light' size='small'><i>({generic})</i></span>]";
+  window-format:              "Class : {c}\nWorkspace : {w}";
+  me-select-entry:            "";
+  me-accept-entry:            [ MousePrimary, MouseSecondary, MouseDPrimary ];
+}
+
+@theme "./config/catppuccin.rasi"
+@import "./config/fonts.rasi"
+
+// ---------------------------------------------------------------
+//  "Blade" theme: rectangular, sharp, brushed-steel accents.
+//  No rounded corners anywhere.
+// ---------------------------------------------------------------
+
+// Main Window
+window {
+  location:                    center;
+  anchor:                      center;
+  fullscreen:                  false;
+  border:                      1px;
+  border-radius:               0px;
+  border-color:                #9aa4b2ff;
+  width:                       520px;
+  x-offset:                    0px;
+  y-offset:                    0px;
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     0px;
+  cursor:                      "default";
+  transparency:                "real";
+  background-color:            #1b1d23f2;
+}
+
+// Main Box
+mainbox {
+  enabled:                     true;
+  spacing:                     12px;
+  padding:                     24px;
+  background-color:            transparent;
+  children:                    [ "inputbar", "mode-switcher", "listview" ];
+}
+
+// Inputbar
+inputbar {
+  enabled:                     true;
+  spacing:                     10px;
+  padding:                     40px 24px;
+  margin:                      0px;
+  border-radius:               0px;
+  background-color:            transparent;
+  background-image:            url("~/.current_wallpaper", width);
+  children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  padding:                     12px 14px;
+  border:                      0px;
+  border-radius:               0px;
+  border-color:                @border-tb;
+  background-color:            #2a2d34f2;
+  text-color:                  #9aa4b2ff;
+  str:                         " ";
+  font-size:                   16px;
+  vertical-align:              center;
+}
+
+// The actual search input (keyboard typing goes here)
+entry {
+  enabled:                     true;
+  expand:                      true;
+  padding:                     12px 16px;
+  margin:                      0px;
+  border:                      0px;
+  border-radius:               0px;
+  background-color:            #2a2d34f2;
+  text-color:                  #e6edf3ff;
+  placeholder:                 "Type to search apps...";
+  placeholder-color:           #7d8590ff;
+  font-size:                   16px;
+  cursor:                      text;
+  vertical-align:              center;
+}
+
+listview {
+  enabled:                     true;
+  columns:                     1;
+  lines:                       6;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                true;
+  fixed-columns:               true;
+  spacing:                     2px;
+  background-color:            transparent;
+  cursor:                      "default";
+}
+
+// Elements
+element {
+  enabled:                     true;
+  spacing:                     15px;
+  margin:                      0px;
+  padding:                     6px 8px;
+  border:                      0px solid;
+  border-radius:               0px;
+  background-color:            transparent;
+  text-color:                  #e6edf3ff;
+  cursor:                      pointer;
+}
+
+element normal.active {
+  border-radius:               0px;
+  background-image:            linear-gradient(to right, #9aa4b2ff, #6b7280ff);
+  text-color:                  #14161aff;
+}
+
+element selected.normal {
+  border:                      0px 0px 0px 3px;
+  border-color:                #c8d1d9ff;
+  border-radius:               0px;
+  // brushed-steel body with a sharp left "blade" edge
+  background-image:            linear-gradient(to right, #4a5058ff, #23262cff);
+  text-color:                  #f0f3f6ff;
+}
+
+element selected.active {
+  border:                      0px 0px 0px 3px;
+  border-color:                #ed8796ff;
+  border-radius:               0px;
+  background-image:            linear-gradient(to right, #4a5058ff, #23262cff);
+  text-color:                  #f0f3f6ff;
+}
+
+element-icon {
+  background-color:            transparent;
+  size:                        30px;
+  cursor:                      inherit;
+}
+
+element-text {
+  background-color:            inherit;
+  text-color:                  inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+}
+
+// Mode Switcher
+mode-switcher {
+  enabled:                     true;
+  expand:                      false;
+  spacing:                     10px;
+  background-color:            transparent;
+}
+
+button {
+  padding:                     8px 14px;
+  border-radius:               0px;
+  background-image:            linear-gradient(#3a3f47ff);
+  text-color:                  #c8d1d9ff;
+  cursor:                      pointer;
+}
+
+button selected {
+  border-radius:               0px;
+  background-image:            linear-gradient(#9aa4b2ff);
+  text-color:                  #14161aff;
+}
+
+// Message
+error-message {
+  padding:                     20px;
+  border-radius:               0px;
+  background-color:            #1b1d23f2;
+  text-color:                  #e6edf3ff;
+}
+
+textbox {
+  padding:                     0px;
+  border-radius:               0px;
+  text-color:                  #e6edf3ff;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+}
