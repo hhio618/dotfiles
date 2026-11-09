@@ -133,6 +133,9 @@ set $menu rofi -show drun -theme ~/.config/rofi/theme.rasi
 # Execute VS-Code
     bindsym $mod+c exec code
 
+# Kill picom
+    bindsym $mod+Ctrl+c exec --no-startup-id pkill picocom
+
 #------------------------------------------------#
 #           Hardware key controls.               #
 #------------------------------------------------#
