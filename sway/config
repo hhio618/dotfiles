@@ -253,6 +253,13 @@ bindsym $mod+r mode "resize"
 	natural_scroll disabled
     }
 
+# Keyboard
+
+    input type:keyboard {
+        xkb_layout "us,ir"
+        xkb_options "grp:alt_shift_toggle"
+    }
+
 #------------------------------------------------#
 #                    Waybar                      #
 #------------------------------------------------#

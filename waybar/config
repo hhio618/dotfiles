@@ -1,9 +1,9 @@
 {
 	"height": 40,
 	"layer": "top",
-	"modules-left": ["custom/powermenu", "sway/mode", "sway/workspaces", "cpu", "memory"],
+	"modules-left": ["custom/powermenu", "sway/mode", "sway/workspaces"],
 	"modules-center": ["sway/window"],
-	"modules-right": ["pulseaudio", "temperature", "backlight", "network", "clock", "tray"],
+	"modules-right": ["cpu", "memory", "pulseaudio", "temperature", "backlight", "network", "sway/language", "clock", "tray"],
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
@@ -121,5 +121,10 @@
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
-    }
+    },
+"sway/language": {
+    "format": "|   {}   ",
+    "format-en": "EN",
+    "format-fa": "FA"
+}
 }
